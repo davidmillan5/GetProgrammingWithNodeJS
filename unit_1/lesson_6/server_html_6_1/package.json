@@ -1,0 +1,20 @@
+{
+  "name": "server_html_6_1",
+  "version": "1.0.0",
+  "description": "Serving statics files with the fs module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Node.js",
+    "NPM",
+    "HTML"
+  ],
+  "author": "Cesar David Millan",
+  "license": "ISC",
+  "dependencies": {
+    "http-status-codes": "^2.2.0"
+  }
+}

@@ -1,26 +1,31 @@
 'use strict';
 
-const http = require('http');
-const port = 3000;
-const fs = require('fs');
-const httpStatus = require('http-status-codes');
+const port = 3000,
+  http = require('http'),
+  httpStatus = require('http-status-codes'),
+  fs = require('fs');
 
 const sendErrorResponse = (res) => {
   res.writeHead(httpStatus.StatusCodes.NOT_FOUND, {
     'Content-Type': 'text/html',
   });
-  res.write('<h1>File Not Found</h1>');
+  res.write('<h1>File Not Found!</h1>');
   res.end();
 };
 
 http
   .createServer((req, res) => {
     let url = req.url;
-    if (url.indexOf('.html') !== 1) {
+    if (url.indexOf('.html') !== -1) {
       res.writeHead(httpStatus.StatusCodes.OK, {
         'Content-Type': 'text/html',
       });
       customReadFile(`./views${url}`, res);
+    } else if (url.indexOf('.js') !== -1) {
+      res.writeHead(httpStatus.StatusCodes.OK, {
+        'Content-Type': 'text/javascript',
+      });
+      customReadFile(`./public/js${url}`, res);
     } else if (url.indexOf('.css') !== -1) {
       res.writeHead(httpStatus.StatusCodes.OK, {
         'Content-Type': 'text/css',

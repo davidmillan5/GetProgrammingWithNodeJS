@@ -2,7 +2,7 @@
 
 const fs = require('fs'),
   httpStatus = require('http-status-codes'),
-  contentTypes = require('./contentTypes');
+  contentTypes = require('./contentTypes.js');
 
 module.exports = {
   getFile: (file, res) => {
@@ -12,6 +12,7 @@ module.exports = {
           httpStatus.StatusCodes.INTERNAL_SERVER_ERROR,
           contentTypes.html
         );
+        // console.log('DeBugger');
         res.end('There was an error serving content!');
       }
       res.end(data);

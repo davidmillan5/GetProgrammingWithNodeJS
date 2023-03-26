@@ -1,7 +1,7 @@
 'use strict';
 
 const httpStatus = require('http-status-codes'),
-  contentTypes = require('./contentTypes'),
+  contentTypes = require('./contentTypes.js'),
   utils = require('./utils');
 
 const routes = {
@@ -13,7 +13,7 @@ exports.handle = (req, res) => {
   try {
     routes[req.method][req.url](req, res);
   } catch (e) {
-    res.writeHead(httpStatus.http - status - codes.OK, contentTypes.html);
+    res.writeHead(httpStatus.StatusCodes.OK, contentTypes.html);
     utils.getFile('views/error.html', res);
   }
 };

@@ -1,0 +1,21 @@
+{
+  "name": "express_route3",
+  "version": "1.0.0",
+  "description": "Creating a MVC Model app with Nodejs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Express.js",
+    "JavaScript",
+    "MVC",
+    "Back-End"
+  ],
+  "author": "Cesar David Millan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
